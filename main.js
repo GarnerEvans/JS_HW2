@@ -1,5 +1,5 @@
-console.log('test')
-let person3 = {
+
+let person = {
     pizza:["Deep Dish","South Side Thin Crust"],
     tacos:"Anything not from Taco bell",
     burgers:"Portillos Burgers",
@@ -13,13 +13,10 @@ let person3 = {
     }]
 }
 
-function favorites(object){
-    for(let i = 0; i < object.keys.length; i++){
-        console.log(Object.entries(object)[i])
-    }
+function Favorites(object){
+    console.log(Object.values(object))
 }
-console.log(favorites(person3))
-console.log('test')
+console.log(Favorites(person))
 
 
 
@@ -40,17 +37,19 @@ function Person(name, age){
 
     this.printInfo = () => console.log(`This persons name is ${this.name} and their age is ${this.age}`);
 
-    this.addYears = (name) => {return this.age + 1
+    this.addYears = (name) => this.age = this.age + 1;
+        return this.age
     }
 
-}
+
+
 
 let Garner = new Person('Garner', 22)
-let Beck = new Person('Beck, 21')
-console.log(Garner)
-console.log(this.addYears(Beck))
-console.log(this.addYears(Beck))
-console.log(this.addYears(Beck))
+let Beck = new Person('Beck', 21)
+console.log(Garner.printInfo())
+console.log(Beck.addYears())
+console.log(Beck.addYears())
+console.log(Beck.addYears())
 
 // Use an arrow to create the printInfo method
 
@@ -76,7 +75,7 @@ const isBigWord = (str) => {
     })
 }
 
-isBigWord('Hellotherehowareyou')
+isBigWord('Helloofnsdanfksjn')
 
 .then((result) => {
     console.log('Big word')
